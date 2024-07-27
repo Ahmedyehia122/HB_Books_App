@@ -19,7 +19,12 @@ class BookModel extends BookEntity {
     this.pages,
     this.cover,
     this.index,
-  }) : super(image: '', bookTitle: '', authorName: '', price: null, reviews: 0);
+  }) : super(
+            image: cover,
+            bookTitle: title,
+            authorName: releaseDate,
+            price: pages,
+            reviews: pages);
 
   factory BookModel.fromJson(Map<String, dynamic> json) => BookModel(
         number: json['number'] as int?,
