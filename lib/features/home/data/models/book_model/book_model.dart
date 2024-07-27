@@ -1,4 +1,6 @@
-class BookModel {
+import 'package:bookly_app/features/home/domain/entities/book_entity.dart';
+
+class BookModel extends BookEntity {
   int? number;
   String? title;
   String? originalTitle;
@@ -17,7 +19,7 @@ class BookModel {
     this.pages,
     this.cover,
     this.index,
-  });
+  }) : super(image: '', bookTitle: '', authorName: '', price: null, reviews: 0);
 
   factory BookModel.fromJson(Map<String, dynamic> json) => BookModel(
         number: json['number'] as int?,
