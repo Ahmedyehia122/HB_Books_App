@@ -20,11 +20,12 @@ class BookModel extends BookEntity {
     this.cover,
     this.index,
   }) : super(
-            image: cover,
-            bookTitle: title,
-            authorName: releaseDate,
-            price: pages,
-            reviews: pages);
+          image: cover,
+          bookTitle: title,
+          authorName: releaseDate,
+          price: pages,
+          reviews: pages,
+        );
 
   factory BookModel.fromJson(Map<String, dynamic> json) => BookModel(
         number: json['number'] as int?,
