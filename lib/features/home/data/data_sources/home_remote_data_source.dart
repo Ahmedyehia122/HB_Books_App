@@ -1,5 +1,7 @@
 import 'package:bookly_app/core/class/api_service.dart';
 import 'package:bookly_app/core/constants/end_points.dart';
+import 'package:bookly_app/core/constants/hive_box.dart';
+import 'package:bookly_app/core/functions/save_books.dart';
 import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/domain/entities/book_entity.dart';
 
@@ -19,6 +21,7 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
     for (var book in data) {
       books.add(BookModel.fromJson(book));
     }
+    saveBooksData(books, HiveBox.kBestSellerListViewBox);
     return books;
   }
 
@@ -29,6 +32,7 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
     for (var book in data) {
       books.add(BookModel.fromJson(book));
     }
+    saveBooksData(books, HiveBox.kBooksListViewBox);
     return books;
   }
 }
