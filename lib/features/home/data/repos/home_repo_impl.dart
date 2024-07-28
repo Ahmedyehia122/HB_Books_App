@@ -23,10 +23,12 @@ class HomeRepoImpl extends HomeRepo {
       books = await homeRemoteDataSource.fetchBestSellerListView();
       return right(books);
     } catch (e) {
-       if (e is DioException) {
-        
-         
-       }
+      if (e is DioException) {
+        return left(
+          ServerFailure.fromDioException(e),
+        );
+      }
+      return left(ServerFailure(errMessage: e.toString()));
     }
   }
 
@@ -41,11 +43,12 @@ class HomeRepoImpl extends HomeRepo {
       books = await homeRemoteDataSource.fetchBooksListView();
       return right(books);
     } catch (e) {
-      return left(
-        ServerFailure(
-          errMessage: e.toString(),
-        ),
-      );
+      if (e is DioException) {
+        return left(
+          ServerFailure.fromDioException(e),
+        );
+      }
+      return left(ServerFailure(errMessage: e.toString()));
     }
   }
 }
