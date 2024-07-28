@@ -5,10 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 
 void main() async {
-  runApp(const BooklyApp());
   await Hive.initFlutter();
-
   Hive.registerAdapter(BookEntityAdapter());
-  Hive.openBox(HiveBox.kBooksListViewBox);
-  Hive.openBox(HiveBox.kBestSellerListViewBox);
+  Hive.openBox<BookEntity>(HiveBox.kBooksListViewBox);
+  Hive.openBox<BookEntity>(HiveBox.kBestSellerListViewBox);
+  runApp(const BooklyApp());
 }
