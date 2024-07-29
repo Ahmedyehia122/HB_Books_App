@@ -1,3 +1,5 @@
+import 'package:bookly_app/core/widgets/custom_error_widget.dart';
+import 'package:bookly_app/core/widgets/custom_loading_indicator.dart';
 import 'package:bookly_app/features/home/presentation/manager/books_list_view_cubit/books_list_view_cubit.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_books_list_view.dart';
 import 'package:flutter/material.dart';
@@ -17,9 +19,9 @@ class CustomBooksListViewBlocBuilder extends StatelessWidget {
             books: state.books,
           );
         } else if (state is BooksListViewFailure) {
-          return Text(state.errMessage);
+          return CustomErrorWidget(errorMessage: state.errMessage);
         } else {
-          return const Center(child: CircularProgressIndicator());
+          return const CustomLoadingIndicator();
         }
       },
     );
