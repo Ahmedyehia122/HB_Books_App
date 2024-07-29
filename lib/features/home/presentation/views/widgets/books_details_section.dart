@@ -12,12 +12,16 @@ class BookDetailsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String testImage =
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtiJKuQkGMitVsqqDyAppVphB6JCTlpEl8_tytAzIVrG-z5NgLGQcQb8uCeQDF7ueRI0w&usqp=CAU';
     return Column(
       children: [
         const BookDetailsViewAppBar(),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 90.w, vertical: 8.h),
-          child: const CustomBookImage(),
+          child: CustomBookImage(
+            imageUrl: testImage,
+          ),
         ),
         SizedBox(height: 15.h),
         Text(
