@@ -1,4 +1,4 @@
-import 'package:bookly_app/core/class/api_service.dart';
+import 'package:bookly_app/core/utils/api_service.dart';
 import 'package:bookly_app/core/constants/end_points.dart';
 import 'package:bookly_app/core/constants/hive_box.dart';
 import 'package:bookly_app/core/functions/save_books.dart';
