@@ -1,3 +1,5 @@
+import 'package:bookly_app/core/constants/strings.dart';
+import 'package:bookly_app/core/functions/launch_url.dart';
 import 'package:bookly_app/core/widgets/custom_text_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,7 +16,7 @@ class ButtonAction extends StatelessWidget {
         children: [
           Expanded(
             child: CustomButton(
-              buttonName: '99.89\$',
+              buttonName: 'Free',
               backGroundColor: Colors.white,
               textColor: Colors.black,
               fontSize: 18.sp,
@@ -25,13 +27,19 @@ class ButtonAction extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: CustomButton(
-              buttonName: 'Free preview',
-              backGroundColor: Colors.orange[800],
-              textColor: Colors.white,
-              borderRadius: BorderRadius.only(
-                topRight: Radius.circular(16.r),
-                bottomRight: Radius.circular(16.r),
+            child: GestureDetector(
+              onTap: () {
+                urlLauncher(
+                    context: context, url: AppStrings.harryBotterbooksUrl);
+              },
+              child: CustomButton(
+                buttonName: 'Free preview',
+                backGroundColor: Colors.orange[800],
+                textColor: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(16.r),
+                  bottomRight: Radius.circular(16.r),
+                ),
               ),
             ),
           ),
