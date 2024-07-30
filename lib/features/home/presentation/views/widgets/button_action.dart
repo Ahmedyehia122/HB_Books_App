@@ -27,19 +27,17 @@ class ButtonAction extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: GestureDetector(
-              onTap: () {
+            child: CustomButton(
+              onPressed: () {
                 urlLauncher(
                     context: context, url: AppStrings.harryBotterbooksUrl);
               },
-              child: CustomButton(
-                buttonName: 'Free preview',
-                backGroundColor: Colors.orange[800],
-                textColor: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(16.r),
-                  bottomRight: Radius.circular(16.r),
-                ),
+              buttonName: 'Free preview',
+              backGroundColor: Colors.orange[800],
+              textColor: Colors.white,
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(16.r),
+                bottomRight: Radius.circular(16.r),
               ),
             ),
           ),
