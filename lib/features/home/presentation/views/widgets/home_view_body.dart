@@ -1,8 +1,7 @@
 import 'package:bookly_app/core/constants/styles.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/best_seller_list_view.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/best_seller_list_view_bloc_builder.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_books_list_view_bloc_builder.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/home_view_app_bar..dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/custom_books_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -31,7 +30,7 @@ class HomeViewBody extends StatelessWidget {
             ],
           ),
         ),
-        const BestSellerListView()
+        const BestSellerListViewBlocBuilder()
       ],
     );
   }

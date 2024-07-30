@@ -13,6 +13,6 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(BookEntityAdapter());
   await Hive.openBox<BookEntity>(HiveBox.kBooksListViewBox);
-  await Hive.openBox(HiveBox.kBestSellerListViewBox);
+  await Hive.openBox<BookEntity>(HiveBox.kBestSellerListViewBox);
   runApp(const BooklyApp());
 }
